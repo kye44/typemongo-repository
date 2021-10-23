@@ -1,5 +1,7 @@
 # TypeMongo-Repository
 Base repository implementation for MongoDB using Mongoose and Typegoose.
+## Installation
+Install via `npm i --save typemongo-repository`
 ## Usage
 To use TypeMongo-Repository define your schema using Mongoose.
 ```typescript
