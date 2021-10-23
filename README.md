@@ -33,3 +33,10 @@ export class UserRepository extends RepositoryBase<IUser> implements IUserReposi
     }
 }
 ```
+Use the repository as so.
+```typescript
+private readonly userRepository: UserRepository = new UserRepository();
+public async createUser(user: IUser): Promise<boolean> {
+        return await this.userRepository.Create(user);
+    }
+```
