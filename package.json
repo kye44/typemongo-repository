@@ -1,13 +1,17 @@
 {
   "name": "typemongo-repository",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Base repository implementation for MongoDB using Mongoose and Typegoose.",
   "types": "lib/index.d.ts",
   "main": "lib/index.js",
   "scripts": {
     "build": "npx tsc"
   },
-  "keywords": [],
+  "homepage": "https://github.com/kye44/typemongo-repository",
+  "bugs": {
+    "url": "https://github.com/kye44/typemongo-repository/issues"
+  },
+  "keywords": ["Typescript", "MongoDB", "Mongoose", "Repository"],
   "author": "Kye Purkis",
   "license": "ISC",
   "dependencies": {
