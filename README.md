@@ -5,6 +5,8 @@ Install via `npm i --save typemongo-repository`
 ## Usage
 To use TypeMongo-Repository define your schema using Mongoose.
 ```typescript
+import { Document, Schema } from 'mongoose';
+
 export interface IUser extends Document {
     firstName: string;
     surname: string;
