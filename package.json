@@ -1,6 +1,6 @@
 {
   "name": "typemongo-repository",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Base repository implementation for MongoDB using Mongoose and Typegoose.",
   "types": "lib/index.d.ts",
   "main": "lib/index.js",

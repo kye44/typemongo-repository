@@ -2,7 +2,7 @@ import { mongoose } from '@typegoose/typegoose';
 import { Document, FilterQuery, Model, Query, UpdateQuery } from 'mongoose';
 
 export interface IRepositoryBase<T> {
-    Create(item: T): Promise<boolean>;
+    Create(item: T): Promise<T | null>;
     Update(_id: string, update: UpdateQuery<T>): Promise<boolean>;
     GetById(_id: string): Promise<Query<T, {}> | null>;
     GetAll(): Promise<Query<T[], {}>>;
@@ -17,14 +17,13 @@ export class RepositoryBase<T extends Document> implements IRepositoryBase<T>{
         this.model = model;
     }
 
-    public async Create(item: T): Promise<boolean> {
+    public async Create(item: T): Promise<T | null> {
         try {
-            await this.model.create(item);
-            return true;
+            return await this.model.create(item);
         }
         catch (e) {
             console.log(e);
-            return false;
+            return null;
         }
     }
 
@@ -47,6 +46,9 @@ export class RepositoryBase<T extends Document> implements IRepositoryBase<T>{
         return await this.model.findOne(query);
     }
 
+    public async GetAllByQuery(query: FilterQuery<T>): Promise<Query<T[], {}> | null> {
+        return await this.model.find(query);
+    }
     public async GetAll(): Promise<Query<T[], {}>> {
         return await this.model.find();
     }
